@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddwgyjeusvt1q"]
+
+[ext_resource type="Texture2D" uid="uid://dnc1pomnulgxu" path="res://icon.svg" id="1_38tqb"]
+[ext_resource type="Script" path="res://node_2d.gd" id="1_i88yb"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_i88yb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(81, 91)
+texture = ExtResource("1_38tqb")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 62.0
+offset_bottom = 64.0
+
+[connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Sprite2D/Button" to="." method="_on_button_button_up"]
